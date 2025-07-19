@@ -1,0 +1,8 @@
+.env
+venv
+.venv
+__pycache__
+files
+users_data
+*.ps1
+main.py
