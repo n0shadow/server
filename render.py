@@ -4,8 +4,17 @@ import httpx
 import os
 import requests
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 API_KEY_ESTE_SERVIDOR = os.getenv("API_KEY_RENDER")
 URL_SERVIDOR_DESTINO = os.getenv("URL")
